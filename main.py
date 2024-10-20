@@ -1,9 +1,14 @@
 import requests
 from send_email import send_email
-API_KEY = "38bd1d10da0f471cb272f7234badb2c4"
 
-url = ("https://newsapi.org/v2/everything?q=tesla"
-       "&sortBy=publishedAt&language=en"
+API_KEY = "38bd1d10da0f471cb272f7234badb2c4"
+TOPIC = "India"
+NEWS_NR = 10
+
+url = ("https://newsapi.org/v2/everything?"
+       f"q={TOPIC}"
+       "&sortBy=publishedAt"
+       "&language=en"
        "&apiKey=38bd1d10da0f471cb272f7234badb2c4")
 
 # Make a request
@@ -18,7 +23,7 @@ if "articles" not in content or not content["articles"]:
 
 news_body = ""
 # Access the article titles and descriptions
-for article in content["articles"]:
+for article in content["articles"][:NEWS_NR]:
     if  (article["title"] is not None
             and article["description"] is not None
             and article["url"] is not None):
