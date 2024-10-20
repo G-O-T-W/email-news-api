@@ -3,8 +3,8 @@ from send_email import send_email
 API_KEY = "38bd1d10da0f471cb272f7234badb2c4"
 
 url = ("https://newsapi.org/v2/everything?q=tesla"
-       "&from=2024-09-20&sortBy=publishedAt&apiKey="
-       "38bd1d10da0f471cb272f7234badb2c4")
+       "&sortBy=publishedAt&language=en"
+       "&apiKey=38bd1d10da0f471cb272f7234badb2c4")
 
 # Make a request
 request = requests.get(url)
