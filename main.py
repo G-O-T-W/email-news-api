@@ -19,8 +19,13 @@ if "articles" not in content or not content["articles"]:
 news_body = ""
 # Access the article titles and descriptions
 for article in content["articles"]:
-    if  article["title"] is not None and article["description"] is not None:
-        news_body = news_body + article["title"]+ "\n" + article["description"] + 2*"\n"
+    if  (article["title"] is not None
+            and article["description"] is not None
+            and article["url"] is not None):
+
+        news_body = (news_body + article["title"]+ "\n"
+                     + article["description"] + "\n"
+                     + article["url"] + 2*"\n")
 
 # Update variable to UTF-8 Encoding
 news_body = news_body.encode("utf-8", errors="ignore").decode("utf-8")
