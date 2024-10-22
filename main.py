@@ -1,7 +1,7 @@
 import requests
 from send_email import send_email
 
-API_KEY = "38bd1d10da0f471cb272f7234badb2c4"
+API_KEY = "insert_your_api_key"
 TOPIC = "India"
 NEWS_NR = 10
 
